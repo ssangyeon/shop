@@ -1,0 +1,87 @@
+## 서버 포트 설정
+#server:
+#  port: 80
+#
+## database 연동 설정
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/db_sangyeon?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+#    username: user_sangyeon
+#    password: 1234
+#  devtools:
+#    livereload:
+#      enabled: true
+#  thymeleaf:
+#    cache: false
+#    check-template-location: true
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    enabled: true
+#
+#  # spring data jpa 설정
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    open-in-view: false
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: validate
+#
+#  servlet:
+#    multipart:
+#      maxFileSize: 20MB
+#      maxRequestSize: 100MB
+#
+#application:
+#  itemImgLocation: /Users/sangyeon/sudy/shop/item
+#  uploadPath: /Users/sangyeon/sudy/shop
+# 애플리케이션 포트 설정
+server:
+  port: 80
+
+# MySQL 연결 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_sangyeon?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: user_sangyeon
+    password: 1234
+
+  # 실행되는 쿼리 콘솔 출력
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        jdbc:
+          batch_size: 100
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+
+# 쿼리에 물음표로 출력되는 바인드 파라미터 출력
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: trace
+
+# Live Reload 기능 활성화
+devtools:
+  livereload:
+    enabled: true
+
+  # Thymeleaf cache 사용 중지
+  thymeleaf:
+    cache: false
+
+# 파일 업로드 설정
+servlet:
+  multipart:
+    maxFileSize: 20MB
+    maxRequestSize: 100MB
+
+# 상품 이미지 업로드 경로
+itemImgLocation: /Users/sangyeon/Desktop/shop/item
+
+# 리소스 업로드 경로
+uploadPath: file:///Users/sangyeon/Desktop/shop/
+
