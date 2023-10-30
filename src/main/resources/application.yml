@@ -41,6 +41,10 @@ server:
 
 # MySQL 연결 설정
 spring:
+
+  profiles:
+    include: oauth
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/db_sangyeon?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
@@ -84,4 +88,6 @@ itemImgLocation: /Users/sangyeon/Desktop/shop/item
 
 # 리소스 업로드 경로
 uploadPath: file:///Users/sangyeon/Desktop/shop/
+
+
 
